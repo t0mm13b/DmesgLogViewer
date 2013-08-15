@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_share"
+        android:title="@string/menu_share"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_menu_share" />
+    <item android:id="@+id/menu_save"
+        android:title="@string/menu_save"
+        android:orderInCategory="101"
+        android:icon="@drawable/ic_menu_save" />
+    <item android:id="@+id/menu_preferences"
+        android:title="@string/menu_preferences"
+        android:orderInCategory="102"
+        android:icon="@drawable/ic_menu_preferences" />
+    <item android:id="@+id/menu_pause"
+        android:title="@string/menu_pause"
+        android:orderInCategory="103"
+        android:icon="@drawable/ic_media_pause" />
+    <item android:id="@+id/menu_clear"
+        android:title="@string/menu_clear"
+        android:orderInCategory="104"
+        android:icon="@drawable/ic_menu_close_clear_cancel" />
+    
+</menu>

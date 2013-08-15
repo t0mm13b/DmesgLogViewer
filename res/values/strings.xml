@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">dmesgLog</string>
+    <string name="app_title_win_param">dmesgLog (%1$s)</string>
+    <string name="app_title_win_param_paused">dmesgLog (%1$s - paused)</string>
+    <string name="empty_dmesg_log">No dmesg Log to display.</string>
+    <!-- Menu -->    
+	<string name="menu_pause">Pause</string>
+	<string name="menu_resume">Resume</string>
+	<string name="menu_clear">Clear</string>
+	<string name="menu_preferences">Preferences</string>
+	<string name="menu_share">Share</string>
+	<string name="menu_save">Save</string>
+	
+	<!-- Main Prefs -->
+	<string name="preference_main_activity_title">dmesgLog - Preferences</string>
+	<string name="preference_klog_levels_section">dmesgLog Section - Log levels</string>
+	<string name="preference_klog_levels_title">Dmesg Log Level Colours</string>
+	<string name="preference_klog_levels_summary">Tap here to go to another screen to adjust colours for log levels.</string>
+	<string name="preference_general_section">dmesgLog Section - General</string>
+	<string name="preference_about_section">dmesgLog Section - About</string>
+	<!--  -->
+	<string name="dmesg_keep_screenon_key">dmesg_screenon</string>
+	<string name="dmesg_keep_screenon_title">Screen kept on.</string>
+	<string name="dmesg_keep_screenon_summary_on">The screen will be kept on efficiently without using wake-locks.</string>
+	<string name="dmesg_keep_screenon_summary_off">The screen will dim accordingly to system settings for Display timeout.</string>
+	<!--  -->
+	<string name="dmesg_refresh_period_key">dmesg_refresh_period</string>
+	<string name="dmesg_refresh_period_title">Refresh period.</string>
+	<string name="dmesg_refresh_period_summary">How often to refresh the log data.</string>
+	<string name="dmesg_refresh_period_unitsright">secs</string>
+	<!--  -->
+	<string name="dmesg_about_title">About&#8230;</string>
+	<string name="dmesg_about_summary">Tap here to view the dialog box about this app.</string>
+	
+	<!-- Log Level colours Prefs -->	
+	<string name="preference_llcolours_activity_title">dmesgLog - Preferences - Colours</string>
+	<string name="klog_level_zero_title">Emergency</string>
+	<string name="klog_level_zero_summary">System is unstable, indicated by &lt;0&gt;</string>
+	<string name="klog_level_zero_key">klog0_colour</string>
+	
+	<string name="klog_level_one_title">Alert</string>
+	<string name="klog_level_one_summary">Action that should be taken immediately, indicated by &lt;1&gt;</string>
+	<string name="klog_level_one_key">klog1_colour</string>
+	
+	<string name="klog_level_two_title">Critical</string>
+	<string name="klog_level_two_summary">Conditions that may reduce to system getting unstable, indicated by &lt;2&gt;</string>
+	<string name="klog_level_two_key">klog2_colour</string>
+	
+	<string name="klog_level_three_title">Error</string>
+	<string name="klog_level_three_summary">Conditions that are not accepted by the kernel, indicated by &lt;3&gt;</string>
+	<string name="klog_level_three_key">klog3_colour</string>
+	
+	<string name="klog_level_four_title">Warning</string>
+	<string name="klog_level_four_summary">Conditions that may reduce to Errors, indicated by &lt;4&gt;</string>
+	<string name="klog_level_four_key">klog4_colour</string>
+	
+	<string name="klog_level_five_title">Notice</string>
+	<string name="klog_level_five_summary">Normal conditions that may have significance, indicated by &lt;5&gt;</string>
+	<string name="klog_level_five_key">klog5_colour</string>
+	
+	<string name="klog_level_six_title">Information</string>
+	<string name="klog_level_six_summary">Conditions that are normal and accepted by the kernel, indicated by &lt;6&gt;</string>
+	<string name="klog_level_six_key">klog6_colour</string>
+	
+	<string name="klog_level_seven_title">Debug</string>
+	<string name="klog_level_seven_summary">Conditions that trigger debugging checks by the kernel, indicated by &lt;7&gt;</string>
+	<string name="klog_level_seven_key">klog7_colour</string>
+	
+	<!--  -->
+	<string name="dmesg_load_pleasewait_title">Please wait&#8230;</string>
+	<string name="dmesg_load_pleasewait_message">Loading dmesg log(s)</string>
+	
+	<!--  -->
+	<string name="dmesg_pleasewait_message_share">Gathering dmesg log(s) for sharing</string>
+	<string name="dmesg_pleasewait_message_save">Gathering dmesg log(s) for saving</string>
+	
+    <!-- Custom Dialog -->
+    <string name="Custom_Dialog_ContentDescr">Dialog box Content Description</string>
+    <string name="Custom_Dialog_ButtonYes">Yes</string>
+    <string name="Custom_Dialog_ButtonNo">No</string>
+    <string name="Custom_Dialog_ButtonOk">Ok</string>
+    <string name="Custom_Dialog_Message">Some Dialog Message</string>
+    <string name="Custom_Dialog_Title">Some Dialog Title</string>
+    
+    <!-- Strings used in About -->
+    <string name="about_dmesgviewer">
+        <![CDATA[
+        <p>Similar in concept to aLogcat, for viewing kernel messages.<br/><br/>
+        For Android platforms including Ice Cream Sandwich (4.0.x) and earlier, NO root is required.<br/><br/>
+        For Android platforms including Jelly Bean (4.1.x) and later, root IS required.<br/></p>
+        <p>
+        		&#8226; Uses <a href="https://github.com/attenzione/android-ColorPickerPreference">ColorPickerPrefs.</a><br/>
+        		&#8226; Uses <a href="https://code.google.com/p/roottools/">Root Tools</a>.<br/>
+        		&#8226; Uses <a href="http://robobunny.com/wp/2011/08/13/android-seekbar-preference/">Seekbar Preferences</a>.<br/>
+        </p><br/>
+        <p>Source can be found on <a href="https://github.com/t0mm13b/DmesgLogViewer">GitHub</a></p><br/>
+        <p>&#169; Tom Brennan, 2013.<br/>All rights reserved.</p><br>
+        ]]>
+    </string>
+</resources>

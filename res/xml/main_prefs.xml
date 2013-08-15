@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:robobunny="http://robobunny.com">
+	<PreferenceCategory android:title="@string/preference_klog_levels_section">
+		<PreferenceScreen android:key="moreKLogColorPrefs"
+			android:title="@string/preference_klog_levels_title" android:summary="@string/preference_klog_levels_summary">
+			<intent android:action="t0mm13b.dmesglog.action.prefsllcolours" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/preference_general_section">
+		<CheckBoxPreference android:title="@string/dmesg_keep_screenon_title"
+			android:summaryOn="@string/dmesg_keep_screenon_summary_on"
+			android:summaryOff="@string/dmesg_keep_screenon_summary_off"
+			android:key="@string/dmesg_keep_screenon_key" android:defaultValue="false" />
+		<com.robobunny.SeekBarPreference
+			android:key="@string/dmesg_refresh_period_key" android:title="@string/dmesg_refresh_period_title"
+			android:summary="@string/dmesg_refresh_period_summary" android:defaultValue="30"
+			android:max="90" robobunny:min="30" robobunny:unitsLeft="" robobunny:interval="15"
+			robobunny:unitsRight="secs" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/preference_about_section">
+		<PreferenceScreen android:key="about_dmesgviewer_key"
+			android:title="@string/dmesg_about_title" android:summary="@string/dmesg_about_summary">
+			<intent android:action="t0mm13b.dmesglog.action.about" />
+		</PreferenceScreen>
+	</PreferenceCategory>
+</PreferenceScreen>

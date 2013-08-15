@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/preference_klog_levels_title">
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_zero_key" android:title="@string/klog_level_zero_title"
+			android:summary="@string/klog_level_zero_summary" android:defaultValue="-63480" />
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_one_key" android:title="@string/klog_level_one_title"
+			android:summary="@string/klog_level_one_summary" android:defaultValue="-4937727" />
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_two_key" android:title="@string/klog_level_two_title"
+			android:summary="@string/klog_level_two_summary" android:defaultValue="-13060864"/>
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_three_key" android:title="@string/klog_level_three_title"
+			android:summary="@string/klog_level_three_summary" android:defaultValue="-14101460"/>
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_four_key" android:title="@string/klog_level_four_title"
+			android:summary="@string/klog_level_four_summary" android:defaultValue="-15628693"/>
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_five_key" android:title="@string/klog_level_five_title"
+			android:summary="@string/klog_level_five_summary" android:defaultValue="-15101764"/>
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_six_key" android:title="@string/klog_level_six_title"
+			android:summary="@string/klog_level_six_summary" android:defaultValue="-13756726"/>
+		<net.margaritov.preference.colorpicker.ColorPickerPreference
+			android:key="@string/klog_level_seven_key" android:title="@string/klog_level_seven_title"
+			android:summary="@string/klog_level_seven_summary" android:defaultValue="-6415669"/>
+	</PreferenceCategory>
+
+</PreferenceScreen>
