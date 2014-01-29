@@ -50,6 +50,7 @@ public class DmesgLogParser implements OnSharedPreferenceChangeListener{
 	// ^\<(\d+)\>\[(\d+)\-(\d+)\s+(\d+\:\d+\:\d+\.\d+)\]\s+(.*)$
 	private final Pattern mRegexpDmesgLog = Pattern.compile("^\\<(\\d+)\\>\\[((\\d+)\\-(\\d+)\\s+(\\d+\\:\\d+\\:\\d+\\.\\d+))\\]\\s+(.*)$", Pattern.CASE_INSENSITIVE);
 	private final Pattern mRegexpDmesgLog_Alt = Pattern.compile("^\\<(\\d+)\\>\\[\\s?((\\d+)\\.(\\d+))\\]\\s+(.*)$", Pattern.CASE_INSENSITIVE);
+	private final Pattern mRegexpDmesgLog_Alt2 = Pattern.compile("^\\<(\\d+)\\>\\[((\\d+)\\-(\\d+)\\s+(\\d+\\:\\d+\\:\\d+\\.\\d+))\\](.*)$", Pattern.CASE_INSENSITIVE);
 	private final Pattern mRegexpDmesgDt = Pattern.compile("^(\\d+)\\-(\\d+)\\s+(\\d+\\:\\d+\\:\\d+\\.\\d+)$", Pattern.CASE_INSENSITIVE);
 	private final Pattern mRegexpUptime = Pattern.compile("^((\\d+)\\.(\\d+))\\s+((\\d+)\\.(\\d+))$", Pattern.CASE_INSENSITIVE);
 	private Object mObjLock = new Object();
@@ -247,6 +248,22 @@ public class DmesgLogParser implements OnSharedPreferenceChangeListener{
 								lineDmesg.setEpochTime(lTotal);
 								lineDmesg.setLogLevelColour(mListLogLevels[dmesgLogLevel]);
 								if (mDmesgScanner != null) mDmesgScanner.cbDmesgParsedEntry(lineDmesg);
+							}else{
+								m = mRegexpDmesgLog_Alt2.matcher(dmesgLines[i]);
+								if (m.matches() && m.groupCount() > 0){
+									int dmesgLogLevel = Integer.valueOf(m.group(1));
+									long lUptime = getDmesgUptimeDevice();
+									long lMilliseconds = Long.parseLong(m.group(4));
+									long lSeconds = Long.parseLong(m.group(3));
+									long lCombined = lSeconds + (lMilliseconds / 1000);
+									long lTotal = lUptime + lCombined;
+									mCal.setTimeInMillis(lTotal);
+									String sReformattd = mSdf.format(mCal.getTime());
+									DmesgLine lineDmesg = new DmesgLine(m.group(1), sReformattd, dmesgLines[i]);
+									lineDmesg.setEpochTime(lTotal);
+									lineDmesg.setLogLevelColour(mListLogLevels[dmesgLogLevel]);
+									if (mDmesgScanner != null) mDmesgScanner.cbDmesgParsedEntry(lineDmesg);
+								}
 							}
 						}
 					}catch(PatternSyntaxException pEx){

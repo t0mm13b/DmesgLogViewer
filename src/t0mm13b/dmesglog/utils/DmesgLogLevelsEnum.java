@@ -14,6 +14,9 @@
  */
 package t0mm13b.dmesglog.utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Enumeration flags to indicate dmesg's log level entry indicated by regexp ^<\d+>....
  * @author t0mm13b
@@ -31,10 +34,16 @@ public enum DmesgLogLevelsEnum{
 	Debug(7);
 	final int mValue;
 	private DmesgLogLevelsEnum(int value) {this.mValue = value;}
+	private static final Map<Integer, DmesgLogLevelsEnum> mapEnum = new HashMap<Integer, DmesgLogLevelsEnum>();
+	static{
+		for (DmesgLogLevelsEnum dllEnum : values()){
+			mapEnum.put(Integer.valueOf(dllEnum.mValue), dllEnum);
+		}
+	}
 	public int getValue() {return mValue;}
 	public static DmesgLogLevelsEnum valueOf(int value) {
-		for (DmesgLogLevelsEnum item : values())
-			if (item.mValue == value) return item;
+		if (mapEnum.containsKey(Integer.valueOf(value))) 
+			return mapEnum.get(Integer.valueOf(value));
 		return Unknown;
 	}
 }
